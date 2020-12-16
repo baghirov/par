@@ -2,7 +2,7 @@ from otree.api import (
     models, widgets, BaseConstants, BaseSubsession, BaseGroup, BasePlayer,
     Currency as c, currency_range
 )
-import random
+
 
 
 class Constants(BaseConstants):
@@ -22,6 +22,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    
     risk = models.IntegerField(
         label='Genel olarak ne kadar risk alırsınız? 0 = kesinlikle risk almam, 10 = kesinlikle risk alırım.',
         choices=Constants.risk_choices,
@@ -77,4 +78,31 @@ class Player(BasePlayer):
 
     tercih = models.StringField(
         label='Deneydeki kararlarınızı nasıl aldığınızı açıklayınız.')
+
+    tercih_2 = models.StringField(
+        label=" Deneydeki kararlarınızı en iyi açıklayan seçeneği seçiniz. ",
+        widget=widgets.RadioSelect(
+        choices=(
+                (0, "İlk iki turda bilgisayar Yeşil seçmişse 3. Turda Yeşil seçme olasılığının %50 olduğunu düşündüm."),
+                (1, "İlk iki turda bilgisayar Yeşil seçmişse 3. Turda Yeşil seçme olasılığının %40-%50 arasında olduğunu düşündüm."),
+                (2, "İlk iki turda bilgisayar Yeşil seçmişse 3. Turda Yeşil seçme olasılığının %30-%40 arasında olduğunu düşündüm."),
+                (3, "İlk iki turda bilgisayar Yeşil seçmişse 3. Turda Yeşil seçme olasılığının %20-%30 arasında olduğunu düşündüm."),
+                (4, "İlk iki turda bilgisayar Yeşil seçmişse 3. Turda Yeşil seçme olasılığının %20den daha az olduğunu düşündüm."),
+                
+            )
+        ),
+    )
+    tercih_3 = models.StringField(
+        label=" Deneydeki kararlarınızı en iyi açıklayan seçeneği seçiniz.  ",
+        widget=widgets.RadioSelect(
+        choices=(
+                (0, "Herhangi bir turda bilgisayar Yeşil seçmişse bir sonraki turda Yeşil seçme olasılığının %50 olduğunu düşündüm."),
+                (1, "Herhangi bir turda bilgisayar Yeşil seçmişse bir sonraki turda Yeşil seçme olasılığının %40-%50 arasında olduğunu düşündüm."),
+                (2, "Herhangi bir turda bilgisayar Yeşil seçmişse bir sonraki turda Yeşil seçme olasılığının %30-%40 arasında olduğunu düşündüm."),
+                (3, "Herhangi bir turda bilgisayar Yeşil seçmişse bir sonraki turda Yeşil seçme olasılığının %20-%30 arasında olduğunu düşündüm."),
+                (4, "Herhangi bir turda bilgisayar Yeşil seçmişse bir sonraki turda Yeşil seçme olasılığının %20den daha az olduğunu düşündüm."),
+            )
+        ),
+    )
+
     

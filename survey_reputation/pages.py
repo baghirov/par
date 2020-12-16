@@ -22,10 +22,16 @@ class Demographics(Page):
                    'father',
                    'mother',
                    'experiment',
-                   'tercih']
+                   'tercih',
+                   'tercih_2',
+                   'tercih_3',
+                   ]
+
+
 
 page_sequence = [
     Intro,
     Risk,
     Demographics,
+   
 ]
