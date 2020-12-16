@@ -1,0 +1,50 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}Giriş{% endblock %}
+
+{% block content %}
+
+{% block styles %}
+
+    <!-- define a style -->
+    <style type="text/css">
+        
+        
+        .otree-btn-next {
+            display: none;
+        }
+        #msg{
+            padding: 20px;
+            background: #C0E6FF;
+            color: red;
+        }
+
+
+    </style>
+
+{% endblock %}
+
+{% include Constants.instructions_template %}
+
+{% next_button %}
+<script>
+    window.onload = function(){
+      setTimeout(loadAfterTime, 300000);
+      setTimeout(disappearAfterTime, 300000);
+    };
+
+    function loadAfterTime() {
+       $(".otree-btn-next").css("display", "block");
+    }
+    function disappearAfterTime() {
+       $("#msg").hide();
+    }
+</script>
+    
+
+    <p id="msg">
+       Lütfen yönergeleri inceleyin. İlerle butonu 5 dakika sonra aktif olacaktır.
+    </p>
+
+{% endblock %}

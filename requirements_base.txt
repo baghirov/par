@@ -1,0 +1,2 @@
+# You should put your requirements in requirements.txt instead.
+otree>=3.2.3

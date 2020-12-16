@@ -1,0 +1,151 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Deneyimiz sona erdi.
+{% endblock %}
+
+{% block content %}
+
+    
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p><strong>Kazancınız:</strong></p>
+            <p> {{ final_payoff_with_showup }}</p>
+            
+            <p><strong> Lütfen aşağıdaki bilgileri kaydedin: </strong>   </p>
+                <p> Tarih:  <strong> {{ date }} </strong> </p>
+                <p> Katılımcı numarası: <strong> {{ id }}</strong> </p>
+                <p> Katılımcı kodu: <strong> {{ redemption_code }}</strong> </p>
+                
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-bottom:10px">
+        <div class="panel-body">
+            <p> {% formfield player.payment_method %}</p>
+                
+        </div>
+    </div>
+    
+    <div id="yazi"> 
+        <p> Deney ödemenizin banka hesabına gönderilmesini talep ettiyseniz devam etmeden önce 
+            aşağıdaki adımları izleyin.</p>
+
+        <p> 1 - Aşağıdaki formda yer alan 
+                ifadeleri kendi el yazınızla boş bir A4 kâğıdı üzerine yazın. 
+                Lütfen formdaki tüm ifadeleri eksiksiz ve okunaklı şekilde yazdığınızdan emin olunuz.</p>
+
+        <p> 2- Doldurmuş olduğunuz formun net bir fotoğrafını çekip belis@bilgi.edu.tr adresine yukarıdaki tarih, katılımcı numarası
+            ve katılımcı kodu bilgileri ile birlikte gönderin. </p>
+            
+        <p> 3- Üniversitemizin Mali İşler biriminden gelebilecek herhangi bir ilave talebe istinaden formun aslını 
+            birkaç ay saklamanız rica olunur.</p>
+        <div class="formesas">   
+            <p>İstanbul Bilgi Üniversitesi Ekonomi Laboratuvarı (BELİS)’te yapılan deneylere katılımım karşılığında kazandığım 
+            ……… TL (yazı ile ……………………………………TL)  tutarın, belirttiğim banka hesabına transfer edilmesini kabul ettiğimi beyan ederim. </p>
+            <p> Ad-Soyad:</p> 
+            <p> TC Kimlik no:</p> 
+            <p> IBAN:</p> 
+            <p> İmza:</p>  
+        </div>
+    </div>
+
+    <div id="yazi2"> 
+        <p> Seçiminiz kaydedildi. Sizinle birkaç gün içinde ödemenin yapılacağı zamanla ilgili e posta yoluyla iletişime
+            geçilecektir.
+        </p> 
+    </div>
+
+    <div id="ibanpreference"> 
+            {% formfield player.own_iban %}  
+    </div>
+
+    <div id="pymnt" > 
+        <p>Kazandığınız tutarın banka hesabınıza transfer edilmesini istiyorsanız aşağıdaki bilgileri doldurun:</p>
+            {% formfield player.name %}  
+            {% formfield player.surname %}
+            {% formfield player.iban %}
+    </div>
+
+    <div id="pymntother" > 
+        <p>Kazandığınız tutarın 3. kişi hesabına transfer edilmesini istiyorsanız aşağıdaki bilgileri doldurun:</p>
+            {% formfield player.other_relation %} 
+            {% formfield player.other_name %}  
+            {% formfield player.other_surname %}
+            {% formfield player.other_iban %}
+    </div>
+    <br>
+    
+    {% next_button %}
+    
+{% endblock %}
+
+{% block scripts %}
+
+<script>
+$(document).ready(function() {
+
+
+    var $pymntDiv = $('#pymnt');
+    var $pymntotherDiv = $('#pymntother');
+    var $ibanpreferenceDiv = $('#ibanpreference');
+    var $yaziDiv = $('#yazi');
+    var $yazi2Div = $('#yazi2');
+    $yazi2Div.hide();
+    
+    $('input').change(function () {
+        var paymentMethod = $('input[name=payment_method]:checked').val();
+        
+        
+        if (paymentMethod === 'False') {
+            $yazi2Div.show();
+            $yaziDiv.hide();
+            $ibanpreferenceDiv.hide();
+            $pymntDiv.hide();
+            $pymntotherDiv.hide();
+        } else {
+            $yaziDiv.show();
+            $yazi2Div.hide();
+            $ibanpreferenceDiv.show();
+            $pymntDiv.hide();
+            $pymntotherDiv.hide();
+            var owniban = $('input[name=own_iban]:checked').val();
+            if (owniban === 'False') {
+                $pymntDiv.hide();
+                $pymntotherDiv.show();
+            } else{
+                $pymntDiv.show();
+                $pymntotherDiv.hide();
+            }   
+        }
+    });
+});
+</script>
+<style>
+    .formesas {
+      padding: 20px;
+      border: 3px outset red;
+      margin: 10px;
+      background-color: rgb(170, 213, 228);    
+      text-align: left;
+    }
+    </style>
+<style>
+    
+    #yazi {
+      padding: 10px;
+      border: 1px outset rgb(14, 8, 8);
+      background-color: rgb(215, 248, 246);    
+      text-align: left;
+    }
+    #yazi2 {
+      padding: 10px;
+      border: 1px outset rgb(14, 8, 8);
+      background-color: rgb(215, 248, 246);    
+      text-align: left;
+    }
+    </style>
+
+
+{% endblock %}
+
