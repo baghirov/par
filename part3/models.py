@@ -12,15 +12,15 @@ doc = """ Principal agent game Treatment 3
 class Constants(BaseConstants):
     name_in_url = 'part3'
     players_per_group = 2
-    num_rounds = 3
+    num_rounds = 15
     instructions_template = 'part3/Instructions.html'
 
     endowment = c(0)
     bad_payment_1 = c(-20)
     good_payment_1 = c(10)
     
-    # in treatment 2, stakes increase by multiplying with 2. Thus, multiply
-    # good and bad payment with 2 in the second period. With 4 in the third 
+    # in treatment 3, stakes increase by multiplying with 3. Thus, multiply
+    # good and bad payment with 3 in the second period. With 9 in the third 
 
     multiplier = 3
     bad_payment_2 = multiplier * bad_payment_1
@@ -321,6 +321,9 @@ class Player(BasePlayer):
         doc=""" RAW PAYOFF: principal's payoff without endowment and belief
         agent's payoff without endowment""")
     
-    payrounds = Constants.rounds_to_pay
+    payround1 = models.IntegerField(initial = Constants.rounds_to_pay[0] + 1)
+    
+    payround2 = models.IntegerField(initial = Constants.rounds_to_pay[1] + 1)
+  
     
     

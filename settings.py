@@ -2,56 +2,21 @@ from os import environ
 
 
 SESSION_CONFIGS = [
-    dict(
-        name='principal_agent_reputation_t1',
-        display_name="Treatment 1 with payment",
-        num_demo_participants=2,
-        app_sequence=['part1','payment_info'],
-    ),
+    
     dict(
         name='payment',
         display_name="payment",
         num_demo_participants=1,
         app_sequence=['payment_info'],
     ),
-    
-    dict(
-        name='quiz_principal_agent_reputation_t1_all_in',
-        display_name="Treatment 1 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part1','part1','survey_reputation','payment_info'],
-     ),
-    dict(
-        name='treatment_1_quiz',
-        display_name="Treatment 1  quiz",
-        num_demo_participants=1,
-        app_sequence=['quiz_reputation_part1'],
-    ),
-    
+  
     dict(
         name='survey_reputation',
         display_name="survey_reputation",
         num_demo_participants=1,
         app_sequence=['survey_reputation'],
     ),
-    dict(
-        name='principal_agent_reputation_t2',
-        display_name="Treatment 2 with payment",
-        num_demo_participants=2,
-        app_sequence=['part2','payment_info'],
-    ),   
-    dict(
-        name='quiz_principal_agent_reputation_t2_all_in',
-        display_name="Treatment 2 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part2','part2','survey_reputation','payment_info'],
-     ),
-    dict(
-        name='treatment_2_quiz',
-        display_name="Treatment 2  quiz",
-        num_demo_participants=1,
-        app_sequence=['quiz_reputation_part2'],
-    ),
+   
     dict(
         name='principal_agent_reputation_t3',
         display_name="Treatment 3 with payment",
@@ -125,6 +90,48 @@ SECRET_KEY = 'n0&zhjus4p%t)unjf#vn0@lt(9m91st2y7-j1u!-b)h^$l8nbn'
 INSTALLED_APPS = ['otree']
 
 # inactive session configs
+
+# dict(
+#         name='principal_agent_reputation_t1',
+#         display_name="Treatment 1 with payment",
+#         num_demo_participants=2,
+#         app_sequence=['part1','payment_info'],
+ #    ),
+
+  
+ #   dict(
+ #       name='quiz_principal_agent_reputation_t1_all_in',
+ #       display_name="Treatment 1 with quiz, risk,survey and payment info",
+ #       num_demo_participants=2,
+ #       app_sequence=['quiz_reputation_part1','part1','survey_reputation','payment_info'],
+ #    ),
+ #   dict(
+ #       name='treatment_1_quiz',
+ #       display_name="Treatment 1  quiz",
+ #       num_demo_participants=1,
+ #       app_sequence=['quiz_reputation_part1'],
+ #   ),
+    
+
+#     dict(
+#        name='principal_agent_reputation_t2',
+#        display_name="Treatment 2 with payment",
+#        num_demo_participants=2,
+#        app_sequence=['part2','payment_info'],
+#    ),   
+#    dict(
+#        name='quiz_principal_agent_reputation_t2_all_in',
+#        display_name="Treatment 2 with quiz, risk,survey and payment info",
+#        num_demo_participants=2,
+#        app_sequence=['quiz_reputation_part2','part2','survey_reputation','payment_info'],
+#     ),
+#    dict(
+#        name='treatment_2_quiz',
+#        display_name="Treatment 2  quiz",
+#        num_demo_participants=1,
+#        app_sequence=['quiz_reputation_part2'],
+#    ),
+
 # dict(name='trust', display_name="Trust Game", num_demo_participants=2, app_sequence=['trust', 'payment_info']),
 # dict(name='prisoner', display_name="Prisoner's Dilemma", num_demo_participants=2,
 #      app_sequence=['prisoner', 'payment_info']),
