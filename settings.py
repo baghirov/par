@@ -19,13 +19,13 @@ SESSION_CONFIGS = [
         name='quiz_principal_agent_reputation_t1_all_in',
         display_name="Treatment 1 with quiz, risk,survey and payment info",
         num_demo_participants=2,
-        app_sequence=['quiz_reputation','part1','survey_reputation','payment_info'],
+        app_sequence=['quiz_reputation_part1','part1','survey_reputation','payment_info'],
      ),
     dict(
-        name='quiz',
+        name='treatment_1_quiz',
         display_name="Treatment 1  quiz",
         num_demo_participants=1,
-        app_sequence=['quiz_reputation'],
+        app_sequence=['quiz_reputation_part1'],
     ),
     
     dict(
@@ -34,6 +34,49 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=['survey_reputation'],
     ),
+    dict(
+        name='principal_agent_reputation_t2',
+        display_name="Treatment 2 with payment",
+        num_demo_participants=2,
+        app_sequence=['part2','payment_info'],
+    ),   
+    dict(
+        name='quiz_principal_agent_reputation_t2_all_in',
+        display_name="Treatment 2 with quiz, risk,survey and payment info",
+        num_demo_participants=2,
+        app_sequence=['quiz_reputation_part2','part2','survey_reputation','payment_info'],
+     ),
+    dict(
+        name='treatment_2_quiz',
+        display_name="Treatment 2  quiz",
+        num_demo_participants=1,
+        app_sequence=['quiz_reputation_part2'],
+    ),
+    dict(
+        name='principal_agent_reputation_t3',
+        display_name="Treatment 3 with payment",
+        num_demo_participants=2,
+        app_sequence=['part3','payment_info'],
+    ),  
+    dict(
+        name='riskt3',
+        display_name="risk Treatment 3",
+        num_demo_participants=2,
+        app_sequence=['risk_part3','payment_info'],
+    ), 
+    dict(
+        name='quiz_principal_agent_reputation_t3_all_in',
+        display_name="Treatment 3 with quiz, risk,survey and payment info",
+        num_demo_participants=2,
+        app_sequence=['quiz_reputation_part3','part3','risk_part3','survey_reputation','payment_info'],
+     ),
+    dict(
+        name='treatment_3_quiz',
+        display_name="Treatment 3  quiz",
+        num_demo_participants=1,
+        app_sequence=['quiz_reputation_part3'],
+    ),
+    
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -42,9 +85,15 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1/3, participation_fee=35.00, doc=""
+    real_world_currency_per_point=1/13, participation_fee=30.00, doc=""
 )
 OTREE_PRODUCTION = True
+
+# exchange rates for treatments:
+## PART1: 1/3
+## PART2: 1/7
+## PART3: 1/13
+## PART4: 1/21
 
 # ISO-639 code
 # for example: de, fr, ja, ko, zh-hans

@@ -33,10 +33,10 @@ class Constants(BaseConstants):
     bad_3 =  bad_2
     good_3 = good_2
         
-    # in quiz, each question worths 2TL:
+      # in quiz, each question worths 2 Tl. exchange rate is 1/3 hence 6 points:
     point_per_question = c (6) 
     outside_payment = c(0)
-    belief_payment = c(1)
+    
     probability_unbiased = 0.1
     probability_biased = 1 - probability_unbiased
     color_0 = 'Yeşil'
@@ -90,7 +90,7 @@ class Subsession(BaseSubsession):
         print(self.get_group_matrix())
         #group_randomly() -> built-in function that  shuffles players. fixed id in groups
         # so that roles (principal or agent) remain fixed.
-        rdm = random.uniform(0,1)
+        
         # to be used to define unb and b types
         for g in self.get_groups():
             agent = g.get_player_by_role('agent')
@@ -200,20 +200,20 @@ class Group(BaseGroup):
         if self.agent_hired_1:
             self.action_1 = Constants.agent_action_choices [self.agent_action_1][1]
         else:
-            self.action_1 = "İşe alınmadı"
+            self.action_1 = "İş verilmedi"
     action_2 = models.StringField()
     def set_action_2(self):
         if self.agent_hired_2:
             self.action_2 = Constants.agent_action_choices [self.agent_action_2][1]
         else:
-            self.action_2 = "İşe alınmadı"
+            self.action_2 = "İş verilmedi"
     action_3 = models.StringField()
     def set_action_3(self):
         if self.agent_hired_3:
             self.action_3 = Constants.agent_action_choices [self.agent_action_3][1]
         else:
-            self.action_3 = "İşe alınmadı"
-    
+            self.action_3 = "İş verilmedi"
+            
     ### PERIOD PAYOFFS ###
     def set_return_1(self):
         principal = self.get_player_by_role('principal')
