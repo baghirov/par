@@ -12,7 +12,7 @@ doc = """ Principal agent game Treatment 3
 class Constants(BaseConstants):
     name_in_url = 'part3'
     players_per_group = 2
-    num_rounds = 20
+    num_rounds = 3
     instructions_template = 'part3/Instructions.html'
 
     endowment = c(0)
