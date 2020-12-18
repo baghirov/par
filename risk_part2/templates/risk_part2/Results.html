@@ -37,7 +37,7 @@
 {# *** TITLE *** #}
 {# ****************************************************************************************************************** #}
 {% block title %}
-    {% trans "Sonuçlar" %}
+    {% trans "Ekstra Aşama sonuçları" %}
 {% endblock %}
 
 
@@ -211,6 +211,7 @@
             <p>
                 {% blocktrans trimmed with payoff=payoff %}
                     Bu aşamadan kazancınız: <b>{{ payoff }}</b>.
+                    
                 {% endblocktrans %}
             </p>
         </div>

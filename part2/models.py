@@ -12,7 +12,7 @@ doc = """ Principal agent game Treatment 3
 class Constants(BaseConstants):
     name_in_url = 'part2'
     players_per_group = 2
-    num_rounds = 20
+    num_rounds = 15
     instructions_template = 'part2/Instructions.html'
 
     endowment = c(0)
@@ -321,6 +321,8 @@ class Player(BasePlayer):
         doc=""" RAW PAYOFF: principal's payoff without endowment and belief
         agent's payoff without endowment""")
     
-    payrounds = Constants.rounds_to_pay
+    payround1 = models.IntegerField(initial = Constants.rounds_to_pay[0] + 1)
+    
+    payround2 = models.IntegerField(initial = Constants.rounds_to_pay[1] + 1)
     
     

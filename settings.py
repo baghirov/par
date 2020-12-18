@@ -39,6 +39,12 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=['survey_reputation'],
     ),    
+    dict(
+        name='quiz_principal_agent_reputation_t2_all_in',
+        display_name="Treatment 2 with quiz, risk,survey and payment info",
+        num_demo_participants=2,
+        app_sequence=['quiz_reputation_part2','part2','risk_part2','survey_reputation','payment_info'],
+     ),
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -116,12 +122,7 @@ INSTALLED_APPS = ['otree']
 #        num_demo_participants=2,
 #        app_sequence=['part2','payment_info'],
 #    ),   
-#    dict(
-#        name='quiz_principal_agent_reputation_t2_all_in',
-#        display_name="Treatment 2 with quiz, risk,survey and payment info",
-#        num_demo_participants=2,
-#        app_sequence=['quiz_reputation_part2','part2','survey_reputation','payment_info'],
-#     ),
+#    
 #    dict(
 #        name='treatment_2_quiz',
 #        display_name="Treatment 2  quiz",
