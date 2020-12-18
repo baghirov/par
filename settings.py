@@ -2,21 +2,12 @@ from os import environ
 
 
 SESSION_CONFIGS = [
-    
     dict(
-        name='payment',
-        display_name="payment",
-        num_demo_participants=1,
-        app_sequence=['payment_info'],
+        name='quiz_principal_agent_reputation_t3_all_in',
+        display_name="Treatment 3 with quiz, risk, survey and payment info",
+        num_demo_participants=2,
+        app_sequence=['quiz_reputation_part3','part3','risk_part3','survey_reputation','payment_info'],
     ),
-  
-    dict(
-        name='survey_reputation',
-        display_name="survey_reputation",
-        num_demo_participants=1,
-        app_sequence=['survey_reputation'],
-    ),
-   
     dict(
         name='principal_agent_reputation_t3',
         display_name="Treatment 3 with payment",
@@ -30,18 +21,24 @@ SESSION_CONFIGS = [
         app_sequence=['risk_part3','payment_info'],
     ), 
     dict(
-        name='quiz_principal_agent_reputation_t3_all_in',
-        display_name="Treatment 3 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part3','part3','risk_part3','survey_reputation','payment_info'],
-     ),
-    dict(
         name='treatment_3_quiz',
         display_name="Treatment 3  quiz",
         num_demo_participants=1,
         app_sequence=['quiz_reputation_part3'],
     ),
-    
+    dict(
+        name='payment',
+        display_name="payment",
+        num_demo_participants=1,
+        app_sequence=['payment_info'],
+    ),
+  
+    dict(
+        name='survey_reputation',
+        display_name="survey_reputation",
+        num_demo_participants=1,
+        app_sequence=['survey_reputation'],
+    ),    
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
