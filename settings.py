@@ -3,11 +3,11 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='quiz_principal_agent_reputation_t3_all_in',
-        display_name="Treatment 3 with quiz, risk, survey and payment info",
+        name='quiz_principal_agent_reputation_t2_all_in',
+        display_name="Treatment 2 with quiz, risk,survey and payment info",
         num_demo_participants=2,
-        app_sequence=['quiz_reputation_part3','part3','risk_part3','survey_reputation','payment_info'],
-    ),
+        app_sequence=['quiz_reputation_part2','part2','risk_part2','survey_reputation','payment_info'],
+     ),
     dict(
         name='principal_agent_reputation_t3',
         display_name="Treatment 3 with payment",
@@ -39,12 +39,7 @@ SESSION_CONFIGS = [
         num_demo_participants=1,
         app_sequence=['survey_reputation'],
     ),    
-    dict(
-        name='quiz_principal_agent_reputation_t2_all_in',
-        display_name="Treatment 2 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part2','part2','risk_part2','survey_reputation','payment_info'],
-     ),
+    
 ]
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
@@ -53,7 +48,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1/13, participation_fee=30.00, doc=""
+    real_world_currency_per_point=1/7, participation_fee=30.00, doc=""
 )
 OTREE_PRODUCTION = True
 
