@@ -44,9 +44,6 @@ class PaymentInfo(Page):
         if values['payment_method'] and values['own_iban'] == False and values['other_iban'] == None:
             return 'Lütfen IBAN bilgisi giriniz.'        
   
-        
-        
-
 
 page_sequence = [PaymentInfo]
 
