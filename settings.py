@@ -3,49 +3,25 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='quiz_principal_agent_reputation_t3_all_in',
-        display_name="Treatment 3 with quiz, risk, survey and payment info",
+        name='quiz_principal_agent_reputation_t1_all_in',
+        display_name="Treatment 1 with quiz, risk,survey and payment info",
         num_demo_participants=2,
-        app_sequence=['quiz_reputation_part3','part3','risk_part3','survey_reputation','payment_info'],
-    ),
-    dict(
-        name='principal_agent_reputation_t3',
-        display_name="Treatment 3 with payment",
+        app_sequence=['quiz_reputation_part1','part1','risk_part1','survey_reputation','payment_info'],
+     ),
+     dict(
+        name='riskt1',
+        display_name="risk Treatment 1",
         num_demo_participants=2,
-        app_sequence=['part3','payment_info'],
-    ),  
-    dict(
-        name='riskt3',
-        display_name="risk Treatment 3",
-        num_demo_participants=2,
-        app_sequence=['risk_part3','payment_info'],
+        app_sequence=['risk_part1','payment_info'],
     ), 
     dict(
-        name='treatment_3_quiz',
-        display_name="Treatment 3  quiz",
-        num_demo_participants=1,
-        app_sequence=['quiz_reputation_part3'],
-    ),
-    dict(
-        name='payment',
-        display_name="payment",
-        num_demo_participants=1,
-        app_sequence=['payment_info'],
-    ),
-  
-    dict(
-        name='survey_reputation',
-        display_name="survey_reputation",
-        num_demo_participants=1,
-        app_sequence=['survey_reputation'],
-    ),    
-    dict(
-        name='quiz_principal_agent_reputation_t2_all_in',
-        display_name="Treatment 2 with quiz, risk,survey and payment info",
+        name='quiz_principal_agent_reputation_t4_all_in',
+        display_name="Treatment 4 with quiz, risk,survey and payment info",
         num_demo_participants=2,
-        app_sequence=['quiz_reputation_part2','part2','risk_part2','survey_reputation','payment_info'],
-     ),
-]
+        app_sequence=['quiz_reputation_part4','part4','risk_part4','survey_reputation','payment_info'],
+    ),
+
+ ]   
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -53,7 +29,7 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=1/13, participation_fee=30.00, doc=""
+    real_world_currency_per_point=1/3, participation_fee=30.00, doc=""
 )
 OTREE_PRODUCTION = True
 
@@ -94,14 +70,41 @@ INSTALLED_APPS = ['otree']
 
 # inactive session configs
 
-# dict(
+
+#  dict(
 #         name='principal_agent_reputation_t1',
 #         display_name="Treatment 1 with payment",
 #         num_demo_participants=2,
 #         app_sequence=['part1','payment_info'],
  #    ),
-
-  
+#
+# dict(
+#        name='principal_agent_reputation_t3',
+#        display_name="Treatment 3 with payment",
+#        num_demo_participants=2,
+#        app_sequence=['part3','payment_info'],
+#    ),  
+#    
+#    dict(
+#        name='treatment_3_quiz',
+#        display_name="Treatment 3  quiz",
+#        num_demo_participants=1,
+#        app_sequence=['quiz_reputation_part3'],
+#    ),
+#    dict(
+#        name='payment',
+#        display_name="payment",
+#        num_demo_participants=1,
+#        app_sequence=['payment_info'],
+#    ),
+#  
+#    dict(
+#        name='survey_reputation',
+#        display_name="survey_reputation",
+#        num_demo_participants=1,
+#        app_sequence=['survey_reputation'],
+#    ),    
+#  
  #   dict(
  #       name='quiz_principal_agent_reputation_t1_all_in',
  #       display_name="Treatment 1 with quiz, risk,survey and payment info",

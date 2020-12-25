@@ -1,0 +1,53 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** STYLES *** #}
+{# ****************************************************************************************************************** #}
+{% block styles %}
+    <link href="{% static 'mpl/css/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** TITLE *** #}
+{# ****************************************************************************************************************** #}
+{% block title %}
+    {% trans "Ekstra Aşama" %}
+{% endblock %}
+
+
+{# ****************************************************************************************************************** #}
+{# *** CONTENT *** #}
+{# ****************************************************************************************************************** #}
+{% block content %}
+
+    <div class="wrapper instructions">
+        <p>
+            {% blocktrans trimmed with n=num_choices %}
+                Şimdi,  {{ n }} adet tercih yapmanız istenecektir. Her tercih "Seçenek A" ve "Seçenek B" arasında 
+                yapılacaktır. Bu seçeneklerdeki olası kazançlar sabit olsa da yüksek kazancın olasılığı değişecektir.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed with n=num_choices %}
+                Bütün kararları verdikten sonra, {{ n }}  karardan biri rastgele olarak seçilecek ve bu aşamadaki kazancınızı
+                belirleyecektir. Bu kararda, seçmiş olduğunu seçeneğe göre (A veya B) yüksek kazanç mı düşük kazanç mı 
+                kazandığınız rastgele olarak (belirtilen olasıklılara göre) belirlenecektir.
+            {% endblocktrans %}
+        </p>
+        <p>
+            {% blocktrans trimmed with n=num_choices %}
+                Özet olarak:  {{ n }} adet tercih yapacaksınız; her tercih için "Seçenek A" veya "Seçenek B"yi seçeceksiniz.
+                Bazı satırlarda 'A', diğerlerinde 'B' seçebilirsiniz. Tercihlerinizi bitirdiğinizde {{ n }} karardan biri rastgele
+                olarak seçilecek. O karardaki kazancınız belirtilen olasılıklara göre rastgele olarak belirlenecektir.
+            {% endblocktrans %}
+        </p>
+
+    </div>
+
+    {% next_button %}
+
+{% endblock %}

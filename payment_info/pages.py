@@ -6,10 +6,11 @@ from datetime import date
 
 class PaymentInfoWaitPage(WaitPage):
     def after_all_players_arrive(self):
-        self.group.setkazanc()
+        self.group.setkazanc()    
         
 
 class PaymentInfo(Page):
+    
     
     form_model = 'player'
     form_fields = ["iban",

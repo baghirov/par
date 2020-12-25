@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}Giriş{% endblock %}
+
+{% block content %}
+
+<p>Bu bir karar alma deneyidir ve bilimsel bir projenin parçasıdır. </p>
+<p>Bu deneyin amacı, insanların farklı durumlarda nasıl karar verdiğini anlayabilmektir. 
+    Kararlarınız “doğru” ya da “yanlış” olarak değerlendirilmeyecektir.</p>
+<p> Deneyde elde edeceğiniz kazanç, alacağınız kararlara bağlıdır ve kazancınızın ne şekilde belirleneceği 
+    bu yönergede detaylı bir şekilde açıklanmıştır.
+     Bu nedenle, yönergeyi dikkatle okumanız ve anlamanız önemlidir.
+      Elde edeceğiniz kazancın ödemesi, sizin tercihinize göre,
+       BELİS laboratuvarında nakit olarak veya şahsi banka hesabınıza para transferi şeklinde yapılacaktır. 
+       Kazancınız hakkında diğer katılımcılara bilgi verilmeyecektir. </p> 
+<p>Aldığınız kararlar ve verdiğiniz cevaplar tamamen anonimdir, hiçbir kimlik bilgisi ile eşleştirilmemektedir. </p>
+
+{% formfield player.onay_3 label = "Deney tamamlanıncaya kadar diğer katılımcılarla iletişim kurmanız kesinlikle yasaktır."  %}   
+
+<p>Deney süresince deney yöneticileri ile iletişiminiz sizinle uzantısı paylaşılmış olan Zoom oturumu aracılığı
+     ile olacaktır. Deney yöneticileri bu oturum aracılığı ile sesli duyurular yapacak ve sizden gelebilecek soruları
+      yanıtlayacaklardır. Bu nedenle, deney süresince Zoom oturumuna bağlı kalmanız ve oturuma bağlanmak için
+       kullandığınız cihazın sesinin duyuruları işitecek şekilde açık tutmanız son derece önemlidir. 
+         </p> 
+
+{% formfield player.onay_2 label = "Sorularınızı Zoom oturumunun «chat» kısmını kullanarak deney yöneticilerine iletebilirsiniz."  %}   
+<p> Deney yaklaşık 120 dak. sürecektir. </p> 
+
+<p> Deney linkleriniz kişiye özgü oluşturulmuştur. </p> 
+{% formfield player.onay_1 label = "Deney linkinizi lütfen kimseyle paylaşmayınız."  %}   
+<p> Deney sırasında kopma yaşarsanız, aynı link üzerinden giriş yapıp kaldığınız yerden devam edebilirsiniz. 
+    Sorununuzun devam etmesi durumunda lütfen Zoom üzerinden deney yürütücülerinden biriyle iletişime geçin.  </p> 
+       
+<p> Deney sonlanmadan deney uygulamasını ve Zoom oturumunu terketmemeniz gerekmektedir.
+     Tek bir katılımcı dahi deneyi tamamlamazsa, proje ekibi açısından deney verisi kullanılamaz hale gelecektir.  </p> 
+       
+
+{% formfield player.onay_4 label = "Deney sonlanmadan deneyi terketmeniz durumunda tarafınıza herhangi bir ödeme yapılmayacak ve bundan sonra yapılacak BELIS deneylerine katılmanız mümkün olmayacaktır."  %}   
+    
+       
+<p>
+    {% next_button %}
+</p>
+    
+{% endblock %}

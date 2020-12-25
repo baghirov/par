@@ -89,7 +89,7 @@ class Constants(BaseConstants):
     # --- oTree Settings (Don't Modify) --- #
     # ---------------------------------------------------------------------------------------------------------------- #
 
-    name_in_url = 'mpl'
+    name_in_url = 'risk_oart1'
     players_per_group = None
 
     if one_choice_per_page:

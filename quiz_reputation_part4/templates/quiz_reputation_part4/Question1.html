@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Quiz
+    Soru 1 / {{ Constants.numquestions }}
+{% endblock %}
+
+{% block content %}
+
+
+    {% formfield player.q1  %}
+<p>
+    {% next_button %}
+</p>
+    {% include Constants.instructions_template %}
+{% endblock %}
