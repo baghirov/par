@@ -16,9 +16,9 @@ class Hire_1(Page):
 class Hire_1WaitPage(WaitPage):
     def vars_for_template(self):
         if self.player.role() =='agent':
-            body_text = "Çalışan Rolündesiniz. İşveren bekleniyor."
-        else:
             body_text = "İşveren bekleniyor."
+        else:
+            body_text = "Çalışan bekleniyor."
         return {'body_text': body_text}
 
 
@@ -45,9 +45,9 @@ class Hire_2(Page):
 class Hire_2WaitPage(WaitPage):
     def vars_for_template(self):
         if self.player.role() =='agent':
-            body_text = "Çalışan Rolündesiniz. İşveren bekleniyor."
-        else:
             body_text = "İşveren bekleniyor."
+        else:
+            body_text = "Çalışan bekleniyor."
         return {'body_text': body_text}
 
 class Action_2(Page):
@@ -79,9 +79,9 @@ class Hire_3(Page):
 class Hire_3WaitPage(WaitPage):
     def vars_for_template(self):
         if self.player.role() =='agent':
-            body_text = "Çalışan Rolündesiniz. İşveren bekleniyor."
-        else:
             body_text = "İşveren bekleniyor."
+        else:
+            body_text = "Çalışan bekleniyor."
         return {'body_text': body_text}
 
 
@@ -113,16 +113,26 @@ class Results_Total(Page):
     timeout_seconds = 60
 
 class End_of_round(WaitPage):
+    def is_displayed(self):
+        return self.round_number != Constants.num_rounds
     title_text = "BÖLÜM BİTTİ"
     body_text = "Rastgele bir katılımcı ile yeniden eşleştirileceksiniz. Lütfen Bekleyin."
 
 class ShuffleWaitPage(WaitPage):
+    def is_displayed(self):
+            return self.round_number != Constants.num_rounds
+    title_text = "BÖLÜM BİTTİ"
+    body_text = "Rastgele bir katılımcı ile yeniden eşleştirileceksiniz. Lütfen Bekleyin."
     wait_for_all_groups = True
     def after_all_players_arrive(self):
         if self.round_number < Constants.num_rounds:
             "creating.session"
 
 class Results_FinalWaitPage(WaitPage):
+    def is_displayed(self):
+        return self.round_number == Constants.num_rounds
+    body_text = "ESAS AŞAMA BİTTİ. Lüfen bekleyin."
+    
     def after_all_players_arrive(self):
         if self.round_number == Constants.num_rounds:
             for p in self.group.get_players():

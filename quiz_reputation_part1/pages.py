@@ -54,11 +54,13 @@ class Question5(Page):
     timeout_seconds = 120
     def before_next_page(self):
         self.player.check_correct_q5()
+    
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
         for p in self.group.get_players():
             p.q_correct()
+        
 
 class Results(Page):
     timeout_seconds = 300

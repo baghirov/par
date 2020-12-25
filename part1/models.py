@@ -10,7 +10,7 @@ doc = """ Principal agent game Treatment 1 """
 class Constants(BaseConstants):
     name_in_url = 'part1'
     players_per_group = 2
-    num_rounds = 3
+    num_rounds = 15
     
     instructions_template = 'part1/Instructions.html'
 
