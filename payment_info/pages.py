@@ -4,13 +4,11 @@ from .models import Constants
 from datetime import date
 
 
-class PaymentInfoWaitPage(WaitPage):
-    def after_all_players_arrive(self):
-        self.group.setkazanc()    
-        
+
 
 class PaymentInfo(Page):
-    
+    def before_next_page(self):
+        self.group.setkazanc()  
     
     form_model = 'player'
     form_fields = ["iban",
@@ -50,5 +48,6 @@ class PaymentInfo(Page):
         
 
 
-page_sequence = [PaymentInfoWaitPage,
-                 PaymentInfo]
+page_sequence = [PaymentInfo]
+
+        

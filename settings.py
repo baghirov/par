@@ -20,6 +20,12 @@ SESSION_CONFIGS = [
         num_demo_participants=2,
         app_sequence=['quiz_reputation_part4','part4','risk_part4','survey_reputation','payment_info'],
     ),
+    dict(
+        name='survey_reputation',
+        display_name="survey_reputation",
+        num_demo_participants=2,
+        app_sequence=['survey_reputation',"payment_info"],
+    ),    
 
  ]   
 
