@@ -3,6 +3,7 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
+<<<<<<< HEAD
         name='quiz_principal_agent_reputation_t1_all_in',
         display_name="Treatment 1 with quiz, risk,survey and payment info",
         num_demo_participants=2,
@@ -11,10 +12,27 @@ SESSION_CONFIGS = [
      dict(
         name='riskt1',
         display_name="risk Treatment 1",
+=======
+        name='quiz_principal_agent_reputation_t2_all_in',
+        display_name="Treatment 2 with quiz, risk,survey and payment info",
+        num_demo_participants=2,
+        app_sequence=['quiz_reputation_part2','part2','risk_part2','survey_reputation','payment_info'],
+     ),
+    dict(
+        name='principal_agent_reputation_t3',
+        display_name="Treatment 3 with payment",
+        num_demo_participants=2,
+        app_sequence=['part3','payment_info'],
+    ),  
+    dict(
+        name='riskt3',
+        display_name="risk Treatment 3",
+>>>>>>> cd737db941bf224e3ef03bbfee1703ad7186c7be
         num_demo_participants=2,
         app_sequence=['risk_part1','payment_info'],
     ), 
     dict(
+<<<<<<< HEAD
         name='quiz_principal_agent_reputation_t4_all_in',
         display_name="Treatment 4 with quiz, risk,survey and payment info",
         num_demo_participants=2,
@@ -22,6 +40,28 @@ SESSION_CONFIGS = [
     ),
 
  ]   
+=======
+        name='treatment_3_quiz',
+        display_name="Treatment 3  quiz",
+        num_demo_participants=1,
+        app_sequence=['quiz_reputation_part3'],
+    ),
+    dict(
+        name='payment',
+        display_name="payment",
+        num_demo_participants=1,
+        app_sequence=['payment_info'],
+    ),
+  
+    dict(
+        name='survey_reputation',
+        display_name="survey_reputation",
+        num_demo_participants=1,
+        app_sequence=['survey_reputation'],
+    ),    
+    
+]
+>>>>>>> cd737db941bf224e3ef03bbfee1703ad7186c7be
 
 # if you set a property in SESSION_CONFIG_DEFAULTS, it will be inherited by all configs
 # in SESSION_CONFIGS, except those that explicitly override it.
@@ -29,7 +69,11 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
+<<<<<<< HEAD
     real_world_currency_per_point=1/3, participation_fee=30.00, doc=""
+=======
+    real_world_currency_per_point=1/7, participation_fee=30.00, doc=""
+>>>>>>> cd737db941bf224e3ef03bbfee1703ad7186c7be
 )
 OTREE_PRODUCTION = True
 
