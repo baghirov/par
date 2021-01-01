@@ -2,24 +2,14 @@ from os import environ
 
 
 SESSION_CONFIGS = [
-    dict(
-        name='quiz_principal_agent_reputation_t1_all_in',
-        display_name="Treatment 1 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part1','part1','risk_part1','survey_reputation','payment_info'],
-     ),
+ 
      dict(
         name='riskt1',
         display_name="risk Treatment 1",
         num_demo_participants=2,
         app_sequence=['risk_part1','payment_info'],
     ), 
-    dict(
-        name='quiz_principal_agent_reputation_t4_all_in',
-        display_name="Treatment 4 with quiz, risk,survey and payment info",
-        num_demo_participants=2,
-        app_sequence=['quiz_reputation_part4','part4','risk_part4','survey_reputation','payment_info'],
-    ),
+  
     dict(
         name='survey_reputation',
         display_name="survey_reputation",
