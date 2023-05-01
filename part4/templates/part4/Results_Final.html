@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{% block title %}
+    <strong> Son </strong>
+{% endblock %}
+
+{% block content %}
+
+{% for d in display_list %}
+    Ödeme için seçilen bölümler: {% for r in d.0 %}
+                                     {{ r }} {% if forloop.last %} {% else %} ve {% endif %}
+                                {% endfor %}
+
+<br>
+
+Bu Bölümlerden kazancınız:                             
+
+{% for p in d.1 %}
+
+{{ p }} {% if forloop.last %} {% else %}  ve  {% endif %}
+
+{% endfor %} PUAN.
+
+<br>
+<br>
+
+Birazdan Ekstra Aşamaya yönlendirileceksiniz.
+
+<br>
+<br>
+<br>
+
+{% next_button %}
+
+{% endfor %}
+	
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
